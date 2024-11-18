@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "work_effort_manager"
+version = "0.1.0"
+description = "Work Effort Management System"
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+tqdm = "^4.66.1"
+colorama = "^0.4.6"
+click = "^8.1.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+unpack = "work_effort_manager.cli:main"
