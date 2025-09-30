@@ -67,3 +67,170 @@
   height: auto;
   display: block;
 }
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: #1a1a1a;
+  min-height: 100vh;
+}
+
+.game-hud {
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.stat-bars {
+  display: flex;
+  gap: 10px;
+}
+
+.stat-bar {
+  flex: 1;
+}
+
+.stat-background {
+  background: #444;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
+}
+
+.stat-fill.health {
+  background: #ff4444;
+}
+
+.stat-fill.mana {
+  background: #4444ff;
+}
+
+.game-scene {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.choice-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #444;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.choice-button:hover {
+  background: #555;
+}
+
+.choice-button.other {
+  background: #666;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff4444;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.error-message button {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.error-message button:hover {
+  background: #ff6666;
+}
+
+.test-panel {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.test-button {
+  background: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.test-button:hover:not(:disabled) {
+  background: #555;
+}
+
+.test-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.test-result {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.test-result.success {
+  background: #22442233;
+  border: 1px solid #224422;
+}
+
+.test-result.error {
+  background: #44222233;
+  border: 1px solid #442222;
+}
+
+.debug-panel {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.debug-panel pre {
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #000;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}

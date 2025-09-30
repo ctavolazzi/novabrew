@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pygamie"
+version = "0.1.0"
+description = "A PyGame-based game project"
+authors = ["Christopher Tavolazzi <ctavolazzi@gmail.com>"]
+packages = [{include = "src/pygamie"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pygame = "^2.5.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.7.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+game = "src.pygamie.game:main"

@@ -1,0 +1,22 @@
+# Window settings
+WINDOW_WIDTH = 800
+WINDOW_HEIGHT = 600
+FPS = 60
+
+# Game settings
+TILE_SIZE = 32
+PLAYER_SPEED = 5
+PLAYER_SIZE = 32
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+GRAY = (128, 128, 128)
+
+# UI settings
+UI_PADDING = 10
+INVENTORY_WIDTH = 400
+INVENTORY_HEIGHT = 300

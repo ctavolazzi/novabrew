@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "timestamp": "'$TIMESTAMP'",
+    "test_date": "'$(date)'",
+    "test_duration_start": "'$(date +%s)'",
+    "models_tested": ["nemotron-mini", "llama3.2"],
+    "system_metrics": {
+      "hardware": {
+        "os": "'$(uname -s)'",
+        "kernel": "'$(uname -r)'",
+        "architecture": "'$(uname -m)'",
+        "cpu": {
+          "model": "'$(sysctl -n machdep.cpu.brand_string 2>/dev/null || echo "Unknown")'",
+          "cores": "'$(sysctl -n hw.ncpu 2>/dev/null || echo "Unknown")'",
+          "frequency": "'$(sysctl -n hw.cpufrequency 2>/dev/null || echo "Unknown")'",
+          "cache_size": "'$(sysctl -n hw.l3cachesize 2>/dev/null || echo "Unknown")'"
+        },
+        "memory": {
+          "total": "'$(sysctl -n hw.memsize 2>/dev/null || echo "Unknown")'",
+          "available": "'$(vm_stat | grep "Pages free:" | awk '{print $3}')'",
+          "pressure": "'$MEM_PRESSURE'"
+        },
+        "gpu": "'$GPU_INFO'",
+        "disk": {
+          "space": "'$DISK_SPACE'",
+          "io_stats": "'$(iostat 2>/dev/null || echo "Unknown")'"
+        }
+      },
+      "software": {
+        "ollama_version": "'$(ollama version 2>/dev/null || echo "Unknown")'",
+        "curl_version": "'$(curl --version | head -n 1)'",
+        "shell": "'$SHELL'",
+        "network": {
+          "stats": "'$NETWORK_STATS'"
+        }
+      }
+    },
+    "test_parameters": {
+      "total_tests": 8,
+      "temperature_range": [0.1, 0.7],
+      "models": {
+        "nemotron-mini": {
+          "context_window": 2048,
+          "parameters": "3B",
+          "quantization": "Q4_K_M",
+          "model_path": "'$(which ollama)'/models/nemotron-mini"
+        },
+        "llama3.2": {
+          "context_window": 4096,
+          "parameters": "3.2B",
+          "quantization": "Q4_K_M",
+          "model_path": "'$(which ollama)'/models/llama3.2"
+        }
+      }
+    }
+  },
+  "test_results": []
+}
